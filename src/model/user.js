@@ -12,12 +12,14 @@ const userSchema = new mongoose.Schema({
   type: {
     type: String,
     enum: ['investor', 'asset-lister'],
-    default: 'investor'
+    default: 'investor',
+    required: true,
   },
   asset_description: {
     type: String,
   },
-  date: { type: Date, default: Date.now },
 });
+
+userSchema.set('timestamps', true);
 
 export default mongoose.model('User', userSchema);

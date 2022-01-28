@@ -6,6 +6,7 @@ const register = async (req, res) => {
     
     // Check DB for duplicate email
     const existingUser = await User.findOne({ email });
+    
     if (existingUser) {
       return res
         .status(401)

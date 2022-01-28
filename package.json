@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "An API endpoint that helps people to join a waitlist.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node app.js",
     "start:dev": "nodemon app.js"
@@ -23,8 +24,10 @@
     "body-parser": "^1.19.1",
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
+    "joi": "^17.6.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.1.8"
+    "mongoose": "^6.1.8",
+    "winston": "^3.5.0"
   },
   "devDependencies": {
     "morgan": "^1.10.0",

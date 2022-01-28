@@ -6,9 +6,7 @@ import mongoose from 'mongoose';
 import winston from 'winston';
 import user from './src/routes/index.js';
 
-
 const app = express();
-
 
 dotenv.config();
 
@@ -22,10 +20,11 @@ app.use(
   morgan(':method :url :status :res[content-length] - :response-time ms')
 );
 
-app.use(user)
+app.use(user);
 
 const port = process.env.PORT || 3000;
-const mongooseConnectionOptions = { useUnifiedTopology: true }; 
+const mongodb_uri = process.env.MONGODB_URI;
+const mongooseConnectionOptions = { useUnifiedTopology: true };
 
 const logger = winston.createLogger({
   level: 'info',
@@ -57,7 +56,7 @@ app.listen(port, () => logger.info(`App listening on ${port}`));
 
 const connect = () => {
   return mongoose
-    .connect('mongodb://localhost:27017/wait-list', mongooseConnectionOptions)
+    .connect(mongodb_uri, mongooseConnectionOptions)
     .then(() => logger.info(`Connected to database successfully...`));
 };
 

@@ -10,7 +10,7 @@ An API endpoint that helps people to join a waitlist.
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`DATABASE_URI`
+`MONGODB_URI`
 
 `PORT`
 
@@ -42,13 +42,13 @@ Dev Environment
 Clone the project
 
 ```bash
-  git clone git@github.com:St80ene/
+  git clone git@github.com:St80ene/Wait-List-API.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd zuri-task5-crud-app
+  cd Wait-List-API.git
 ```
 
 Install dependencies
